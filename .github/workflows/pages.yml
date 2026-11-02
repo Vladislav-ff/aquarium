@@ -26,8 +26,10 @@ jobs:
         run: npm install --prefix .ci --no-audit --no-fund --no-package-lock three@0.169.0 playwright@1.56.1
       - name: Install Chromium
         run: node .ci/node_modules/playwright/cli.js install --with-deps chromium
-      - name: Build consistent site and vendor Three.js
-        run: python scripts/build-pages.py
+      - name: Build site and upgrade fish
+        run: |
+          python scripts/build-pages.py
+          python scripts/upgrade-fish.py
       - name: Test ecology and actual 3D scene
         run: |
           python -m http.server 8000 --directory dist > /tmp/aquarium-http.log 2>&1 &
