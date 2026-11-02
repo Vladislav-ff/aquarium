@@ -1,2 +1,13 @@
-<!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NACRE — Аквариум</title><style>body{background:#06171e;color:#dceee7;font:16px/1.6 system-ui;padding:12vh 10vw}a{color:#a0f3d4}</style></head><body><h1>NACRE</h1><p>Открываем аквариум…</p><p><a id="open" href="./aquarium.html">Открыть аквариум</a></p><script>const target=new URL('./aquarium.html',location.href);target.search=location.search;target.hash=location.hash;document.getElementById('open').href=target.href;location.replace(target.href);</script></body></html>
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NACRE — Natural Behavior 3</title><style>html,body{margin:0;height:100%;background:#06171e;color:#dceee7;font:16px/1.6 system-ui}#status{padding:12vh 8vw}iframe{position:fixed;inset:0;width:100%;height:100%;border:0}</style></head><body><div id="status">Готовим спокойный биотоп: 10 рыб…</div><script type="module">
+import {prepare} from './scripts/prepare-scene.mjs';
+const status=document.getElementById('status');
+try{
+ const names=['aquarium.html','ecology-core (2).js','ecology-app.js','scripts/natural-motion.js','scripts/natural-appearance.js','scripts/behavior-patterns.js'];
+ const data=await Promise.all(names.map(async name=>{const r=await fetch(new URL(name,location.href),{cache:'no-store'});if(!r.ok)throw Error(name+': HTTP '+r.status);return r.text();}));
+ let html=prepare({html:data[0],core:data[1],app:data[2],motion:data[3],visual:data[4],behavior:data[5]});
+ const base=new URL('./',location.href).href.replaceAll('&','&amp;').replaceAll('"','&quot;');html=html.replace('<head>','<head><base href="'+base+'">');
+ const frame=document.createElement('iframe');frame.title='NACRE — 10 рыб';frame.srcdoc=html;document.body.append(frame);
+ Object.defineProperty(window,'NACRE',{get:()=>frame.contentWindow?.NACRE});
+ frame.addEventListener('load',()=>status.remove(),{once:true});
+}catch(e){status.textContent='Не удалось собрать аквариум: '+e.message;console.error(e);}
+</script></body></html>
