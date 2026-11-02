@@ -1,0 +1,9 @@
+NACRE — один полный архив
+
+1. Прочитайте README.md: рекомендуемая публикация — GitHub Actions.
+2. Загрузите СОДЕРЖИМОЕ архива в корень репозитория, включая скрытые .github и .nojekyll.
+3. Settings → Pages → GitHub Actions, затем Actions → Publish GitHub Pages → Run workflow.
+4. В обычной сборке ZIP используется CDN. Workflow подготовит и проверит локальные библиотеки перед публикацией.
+5. Локально: python -m http.server 8000, затем http://localhost:8000/.
+
+Это согласованная сборка исходной NACRE IV. Автономные функции NACRE VI в текущем исходнике отсутствовали и в пакет не включены.

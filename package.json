@@ -1,0 +1,10 @@
+{
+  "name": "nacre-pages",
+  "private": true,
+  "version": "4.1.0",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/unit.test.mjs",
+    "check": "node scripts/check-site.mjs"
+  }
+}

@@ -1,0 +1,1 @@
+PASS: static paths, content hashes, imports, DOM IDs, syntax, manifest and vendor checksums

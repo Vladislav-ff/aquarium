@@ -1,0 +1,12 @@
+{
+  "version": "4.1.0",
+  "source": "supplied NACRE IV",
+  "three": "0.169.0",
+  "localThree": false,
+  "assets": {
+    "physics": "physics.00745b874e0a.mjs",
+    "app": "aquarium.c7f1fd2d8a85.mjs",
+    "boot": "boot.27d4a563116f.mjs",
+    "styles": "styles.12a17f1cd1f1.css"
+  }
+}

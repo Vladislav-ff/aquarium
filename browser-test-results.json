@@ -1,0 +1,95 @@
+{
+  "mode": "Chromium, external network blocked; 2D and startup fallback",
+  "checks": [
+    {
+      "name": "Ecosystem panel opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Pause stops the unified model clock",
+      "passed": true,
+      "detail": {
+        "before": 84.39999999999777,
+        "after": 84.39999999999777
+      }
+    },
+    {
+      "name": "Speed control changes the entire scheduler",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Resume advances model time",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Save writes a valid complete snapshot",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Manual food is included in matter balance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Fish card has age, generation and energy",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JSON export is valid and versioned",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Broken JSON import is rejected safely",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Valid JSON import preserves a valid model",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Manual day/night toggles both directions",
+      "passed": true,
+      "detail": {
+        "dark": 0.12,
+        "light": 1
+      }
+    },
+    {
+      "name": "Mobile panel fits the viewport",
+      "passed": true,
+      "detail": {
+        "x": 38,
+        "y": 105.60154724121094,
+        "width": 340,
+        "height": 629.0000152587891
+      }
+    },
+    {
+      "name": "Mobile capacity is bounded at 64",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "CDN failure automatically activates working 2D",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "No unhandled browser JavaScript errors",
+      "passed": true,
+      "detail": {
+        "desktop": [],
+        "mobile": [],
+        "fallback": []
+      }
+    }
+  ]
+}

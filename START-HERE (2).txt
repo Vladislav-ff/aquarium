@@ -1,0 +1,12 @@
+NACRE Pages 4.3 — один комплект
+
+Прочитайте README.md. Рекомендуемый путь:
+1. Распакуйте архив и загрузите содержимое в корень репозитория, включая .github и .nojekyll.
+2. Settings → Pages → GitHub Actions.
+3. Actions → Publish GitHub Pages → Run workflow.
+
+Готовая ZIP-сборка использует CDN; workflow подготовит локальные библиотеки и проверит их перед публикацией.
+Локально: python -m http.server 8000, затем http://localhost:8000/.
+Для проверки архива: python scripts/verify-archive.py ../nacre-pages-final.zip
+
+Это сборка доступной NACRE IV. Автономные функции недоступной VI сюда не включены.

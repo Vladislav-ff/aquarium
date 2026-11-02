@@ -1,0 +1,62 @@
+{
+  "scope": "Chromium shell/loader, failed dependency handling, root and project-prefix HTTP paths. Success test uses a renderer stub. Full Three.js/WebGL scene not executed.",
+  "checks": [
+    {
+      "name": "/ local assets resolve",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "/ CDN failure is handled, no unhandled exception",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "/ readable startup failure and retry buttons",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/ low-quality retry retains repository prefix",
+      "passed": true,
+      "detail": "http://127.0.0.1:35797/?quality=low"
+    },
+    {
+      "name": "/repository-name/ local assets resolve",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "/repository-name/ CDN failure is handled, no unhandled exception",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "/repository-name/ readable startup failure and retry buttons",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/repository-name/ low-quality retry retains repository prefix",
+      "passed": true,
+      "detail": "http://127.0.0.1:35797/repository-name/?quality=low"
+    },
+    {
+      "name": "Nested-prefix bootstrap success (renderer stub, not 3D test)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Mobile document does not overflow horizontally",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "file:// gets HTTP-server instructions rather than a silent loader",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 11,
+  "failed": 0
+}

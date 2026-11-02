@@ -1,0 +1,10 @@
+{
+  "bundleVersion": "4.3.0",
+  "inputVersion": "NACRE IV",
+  "inputFile": "reference/aquarium-original.html",
+  "inputBytes": 113460,
+  "inputSha256": "9087dd9ae5d2030f993c8a27e8ccb00db8594768a5440d1a34e664b3e38d88d5",
+  "nacreVIAvailable": false,
+  "threeVersion": "0.169.0",
+  "fullWebGLVerifiedHere": false
+}

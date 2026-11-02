@@ -1,0 +1,143 @@
+{
+  "engine": "NACRE 6.0",
+  "date": "2026-11-01T09:05:54.849Z",
+  "passed": 27,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "Initialization respects all supported population limits",
+      "passed": true,
+      "ms": 7
+    },
+    {
+      "name": "Same seed and commands reproduce the exact same state",
+      "passed": true,
+      "ms": 617
+    },
+    {
+      "name": "Motion and metabolism use one common time step",
+      "passed": true,
+      "ms": 44
+    },
+    {
+      "name": "Feeding immediately accounts for ALL added pellet matter",
+      "passed": true,
+      "ms": 265
+    },
+    {
+      "name": "Food pool cannot exceed 36 particles",
+      "passed": true,
+      "ms": 1
+    },
+    {
+      "name": "Invalid feeding requests fail without NaN state",
+      "passed": true,
+      "ms": 1
+    },
+    {
+      "name": "Uneaten food decays without losing matter",
+      "passed": true,
+      "ms": 14
+    },
+    {
+      "name": "Dead agents cannot eat",
+      "passed": true,
+      "ms": 1
+    },
+    {
+      "name": "Predation preserves matter even when the predator is almost full",
+      "passed": true,
+      "ms": 5
+    },
+    {
+      "name": "Mortality is idempotent",
+      "passed": true,
+      "ms": 1
+    },
+    {
+      "name": "Immature parents cannot create eggs through direct API calls",
+      "passed": true,
+      "ms": 0
+    },
+    {
+      "name": "Spawning invests parent reserve and conserves matter",
+      "passed": true,
+      "ms": 0
+    },
+    {
+      "name": "Hatching conserves egg matter and produces an actual small fish",
+      "passed": true,
+      "ms": 0
+    },
+    {
+      "name": "Nursery is spatial, not universal invulnerability",
+      "passed": true,
+      "ms": 8
+    },
+    {
+      "name": "Complete extinction does not trigger hidden respawning",
+      "passed": true,
+      "ms": 1
+    },
+    {
+      "name": "Model rejects invalid time steps",
+      "passed": true,
+      "ms": 1
+    },
+    {
+      "name": "Saved state resumes bit-for-bit, including RNG, motion and food",
+      "passed": true,
+      "ms": 495
+    },
+    {
+      "name": "Corrupted balance is rejected",
+      "passed": true,
+      "ms": 1
+    },
+    {
+      "name": "Unknown version is rejected",
+      "passed": true,
+      "ms": 1
+    },
+    {
+      "name": "Non-finite fish values are rejected",
+      "passed": true,
+      "ms": 1
+    },
+    {
+      "name": "Out-of-bounds fish and orientations are rejected",
+      "passed": true,
+      "ms": 2
+    },
+    {
+      "name": "Duplicate IDs are rejected",
+      "passed": true,
+      "ms": 2
+    },
+    {
+      "name": "Malformed history is rejected",
+      "passed": true,
+      "ms": 8
+    },
+    {
+      "name": "Counter corruption is rejected",
+      "passed": true,
+      "ms": 1
+    },
+    {
+      "name": "Day/night and manual light use the same model clock",
+      "passed": true,
+      "ms": 1
+    },
+    {
+      "name": "Jump uses ballistic flight and returns to water",
+      "passed": true,
+      "ms": 4
+    },
+    {
+      "name": "HTML contains the exact audited JS, complete controls and only one scheduler",
+      "passed": true,
+      "ms": 2
+    }
+  ]
+}
