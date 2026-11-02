@@ -1,0 +1,57 @@
+name: Verify and deploy aquarium
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: aquarium-pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned browser and rendering dependencies
+        run: npm install --prefix .ci --no-audit --no-fund --no-package-lock three@0.169.0 playwright@1.56.1
+      - name: Install Chromium
+        run: node .ci/node_modules/playwright/cli.js install --with-deps chromium
+      - name: Build consistent site and vendor Three.js
+        run: python scripts/build-pages.py
+      - name: Test ecology and actual 3D scene
+        run: |
+          python -m http.server 8000 --directory dist > /tmp/aquarium-http.log 2>&1 &
+          server=$!
+          trap 'kill "$server"' EXIT
+          node scripts/test-pages.mjs
+      - name: Upload verification reports and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aquarium-verification
+          path: test-artifacts/
+          if-no-files-found: ignore
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Deploy tested site
+        id: deployment
+        uses: actions/deploy-pages@v4
