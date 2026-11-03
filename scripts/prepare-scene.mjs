@@ -12,6 +12,8 @@ export function prepare({html,core,app,motion,visual}){
  if(scene.split(anchor).length!==2)throw Error('Scene startup anchor changed');
  scene=scene.replace('new THREE.Vector3(25,18,32)','new THREE.Vector3(18,12,24)').replace('homePos.multiplyScalar(1.55)','homePos.multiplyScalar(1.15)');
  scene=scene.replace('low?1:mobile?1.35:1.6','low?1:mobile?1.5:2');
+ // The inherited fish shader already declares belly in main().
+ visual=visual.replace('float belly=pow','float peaceBelly=pow').replace('belly*.13','peaceBelly*.13');
  set('scene-source',scene.replace(anchor,visual+'\n'+anchor));
  html=html.replace('NACRE VI — Автономная экосистема','NACRE — Peace 4').replace('РОЖДЕНИЯ / ОХОТА','РОЖДЕНИЯ');
  html=html.replace('Это автономная пищевая сеть: рыбы охотятся, растут и размножаются.','Мирный биотоп: рыбы плавают, питаются, растут и размножаются.');
